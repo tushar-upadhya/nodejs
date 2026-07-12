@@ -1,30 +1,37 @@
 const express = require("express");
+const applicationRouter = require("./routes/applicationRouter.routes");
+
 const app = express();
 
 app.use(express.json());
 
+// Logger middleware
 app.use((req, res, next) => {
-  console.log(`method is ${req.method} & URL is ${req.url}`);
+  console.log(`${req.method} ${req.url}`);
   next();
 });
 
-app.get("/", (req, res) => {
-  res.send("welcome");
+// Routes
+app.use("/applications", applicationRouter);
+
+// 404 Handler
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    error: "Route not found",
+  });
 });
 
-// app.get("/application/:id", (req, res) => {
-//   res.send(`fetching application with id ${req.params.id}`);
-// });
+// Error Handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
 
-app.get("/application", (req, res) => {
-  const { status } = req.query;
-
-  res.send(`filtering by status: ${status}`);
+  res.status(500).json({
+    success: false,
+    error: "Internal server error",
+  });
 });
 
-app.use((error, request, result, next) => {
-  console.error(error.stack);
-  res.status(500).json({ error: "main nahi bataoga 😎" });
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
 });
-
-app.listen(3000, () => console.log("running"));

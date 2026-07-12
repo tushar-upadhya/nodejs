@@ -2,18 +2,123 @@
   "applications": [
     {
       "id": 1,
-      "company": "GOOGLE",
-      "role": "swe"
+      "company": "Google",
+      "role": "Software Engineer",
+      "status": "Applied",
+      "location": "Bengaluru",
+      "salary": 3200000,
+      "type": "Full Time",
+      "appliedDate": "2026-07-01",
+      "source": "LinkedIn",
+      "notes": "Reached out to recruiter on LinkedIn."
     },
     {
       "id": 2,
-      "company": "GOOGLE 3",
-      "role": "swe2"
+      "company": "Microsoft",
+      "role": "Frontend Engineer",
+      "status": "Interview",
+      "location": "Hyderabad",
+      "salary": 2800000,
+      "type": "Full Time",
+      "appliedDate": "2026-07-03",
+      "source": "Careers Page",
+      "notes": "HR screening completed."
     },
     {
       "id": 3,
-      "company": "GOOGLE 3",
-      "role": "swe3"
+      "company": "Amazon",
+      "role": "SDE I",
+      "status": "Rejected",
+      "location": "Bengaluru",
+      "salary": 2500000,
+      "type": "Full Time",
+      "appliedDate": "2026-06-28",
+      "source": "Referral",
+      "notes": "Rejected after OA."
+    },
+    {
+      "id": 4,
+      "company": "Adobe",
+      "role": "Frontend Developer",
+      "status": "Applied",
+      "location": "Noida",
+      "salary": 2400000,
+      "type": "Full Time",
+      "appliedDate": "2026-07-06",
+      "source": "LinkedIn",
+      "notes": ""
+    },
+    {
+      "id": 5,
+      "company": "Oracle",
+      "role": "Software Engineer",
+      "status": "Offer",
+      "location": "Bengaluru",
+      "salary": 3000000,
+      "type": "Full Time",
+      "appliedDate": "2026-06-25",
+      "source": "Referral",
+      "notes": "Offer received."
+    },
+    {
+      "id": 6,
+      "company": "Atlassian",
+      "role": "Frontend Engineer",
+      "status": "Interview",
+      "location": "Remote",
+      "salary": 3500000,
+      "type": "Remote",
+      "appliedDate": "2026-07-08",
+      "source": "Careers Page",
+      "notes": "Technical round scheduled."
+    },
+    {
+      "id": 7,
+      "company": "Flipkart",
+      "role": "SDE II",
+      "status": "Applied",
+      "location": "Bengaluru",
+      "salary": 2700000,
+      "type": "Hybrid",
+      "appliedDate": "2026-07-10",
+      "source": "Referral",
+      "notes": ""
+    },
+    {
+      "id": 8,
+      "company": "Paytm",
+      "role": "React Developer",
+      "status": "Interview",
+      "location": "Noida",
+      "salary": 1800000,
+      "type": "Hybrid",
+      "appliedDate": "2026-07-02",
+      "source": "Naukri",
+      "notes": "Coding round completed."
+    },
+    {
+      "id": 9,
+      "company": "Swiggy",
+      "role": "Frontend Engineer",
+      "status": "Applied",
+      "location": "Bengaluru",
+      "salary": 2600000,
+      "type": "Remote",
+      "appliedDate": "2026-07-11",
+      "source": "LinkedIn",
+      "notes": ""
+    },
+    {
+      "id": 10,
+      "company": "Zomato",
+      "role": "Software Engineer",
+      "status": "Rejected",
+      "location": "Gurugram",
+      "salary": 2200000,
+      "type": "Full Time",
+      "appliedDate": "2026-06-20",
+      "source": "Referral",
+      "notes": "Rejected after interview."
     }
   ]
 }
