@@ -22,4 +22,9 @@ app.get("/application", (req, res) => {
   res.send(`filtering by status: ${status}`);
 });
 
+app.use((error, request, result, next) => {
+  console.error(error.stack);
+  res.status(500).json({ error: "main nahi bataoga 😎" });
+});
+
 app.listen(3000, () => console.log("running"));
