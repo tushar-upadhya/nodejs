@@ -1,0 +1,19 @@
+{
+  "applications": [
+    {
+      "id": 1,
+      "company": "GOOGLE",
+      "role": "swe"
+    },
+    {
+      "id": 2,
+      "company": "GOOGLE 3",
+      "role": "swe2"
+    },
+    {
+      "id": 3,
+      "company": "GOOGLE 3",
+      "role": "swe3"
+    }
+  ]
+}
