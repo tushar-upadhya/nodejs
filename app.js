@@ -1,45 +1,25 @@
-// const fs = require("fs");
-// const path = require("path");
+const express = require("express");
+const app = express();
 
-// const filePath = path.join(__dirname, "data.json");
-// // sync method
+app.use(express.json());
 
-// // const data = fs.readFileSync(filePath, "utf-8");
-// // console.log(data);
+app.use((req, res, next) => {
+  console.log(`method is ${req.method} & URL is ${req.url}`);
+  next();
+});
 
-// // async method
+app.get("/", (req, res) => {
+  res.send("welcome");
+});
 
-// // fs.readFile(filePath, "utf-8", (err, data) => {
-// //   if (err) throw err;
-// //   console.log(JSON.parse(data));
-// // });
-
-// const newData = {
-//   applications: [
-//     { id: 1, company: "GOOGLE", role: "swe" },
-//     { id: 2, company: "GOOGLE 3", role: "swe2" },
-//     { id: 3, company: "GOOGLE 3", role: "swe3" },
-//   ],
-// };
-
-// fs.writeFile(filePath, JSON.stringify(newData, null, 2), (err) => {
-//   console.log("write complete");
+// app.get("/application/:id", (req, res) => {
+//   res.send(`fetching application with id ${req.params.id}`);
 // });
 
-const http = require("http");
-const server = http.createServer((req, res) => {
-  if (req.url === "/" && req.method === "GET") {
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end("Welcome to the Job Tracker API");
-  } else if (req.url === "/health" && req.method === "GET") {
-    res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify({ status: "OK" }));
-  } else {
-    res.writeHead(404, { "Content-type": "text/plain" });
-    res.end("not found");
-  }
+app.get("/application", (req, res) => {
+  const { status } = req.query;
+
+  res.send(`filtering by status: ${status}`);
 });
 
-server.listen(3000, () => {
-  console.log("server is running on http://localhost:3000");
-});
+app.listen(3000, () => console.log("running"));
