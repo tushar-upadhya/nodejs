@@ -78,3 +78,45 @@ exports.getApplicationById = (req, res) => {
 
   sendSuccess(res, 200, application);
 };
+
+// create
+exports.createApplication = (req, res) => {
+  const {
+    company,
+    role,
+    status,
+    location,
+    type,
+    appliedDate,
+    source,
+    notes,
+    salary,
+  } = req.body;
+
+  if (!company || !role) {
+    return sendError(res, 400, "Company and role are required");
+  }
+  const applications = readData();
+  const nextId =
+    applications.length > 0
+      ? Math.max(...applications.map((a) => a.id)) + 1
+      : 1;
+  // const appliedDate = new Date().toISOString().split("T")[0];
+
+  const newApplicationPlayload = {
+    id: nextId,
+    company,
+    role,
+    status: status || "applied",
+    appliedDate: appliedDate || new Date().toISOString().split("T")[0],
+    location,
+    type,
+    appliedDate,
+    source,
+    notes,
+    salary,
+  };
+  applications.push(newApplicationPlayload);
+  writeData(applications);
+  sendSuccess(res, 200, newApplicationPlayload);
+};

@@ -119,6 +119,37 @@
       "appliedDate": "2026-06-20",
       "source": "Referral",
       "notes": "Rejected after interview."
+    },
+    {
+      "id": 11,
+      "company": "test",
+      "role": "swd",
+      "status": "interview",
+      "appliedDate": "2026-07-12"
+    },
+    {
+      "id": 12,
+      "company": "Google",
+      "role": "Software Engineer",
+      "status": "interview",
+      "appliedDate": "2026-07-13",
+      "location": "Bengaluru",
+      "type": "Full Time",
+      "source": "LinkedIn",
+      "notes": "First technical interview scheduled.",
+      "salary": 3200000
+    },
+    {
+      "id": 13,
+      "company": "Google",
+      "role": "Software Engineer",
+      "status": "interview",
+      "appliedDate": "2026-07-13",
+      "location": "Bengaluru",
+      "type": "part time",
+      "source": "LinkedIn",
+      "notes": "First technical interview scheduled.",
+      "salary": 3200000
     }
   ]
 }

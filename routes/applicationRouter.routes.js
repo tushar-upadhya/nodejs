@@ -9,4 +9,7 @@ router.get("/stats", applicationController.getStats);
 //get single application by id
 router.get("/:id", applicationController.getApplicationById);
 
+// create new
+router.post("/", applicationController.createApplication);
+
 module.exports = router;
