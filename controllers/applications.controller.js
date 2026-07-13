@@ -9,7 +9,11 @@ function readData() {
 }
 
 function writeData(applications) {
-  fs.writeFileSync(DATA_FILE, JSON.stringify({ applications }, null, 2));
+  fs.writeFileSync(
+    DATA_FILE,
+    JSON.stringify({ applications }, null, 2),
+    "utf-8",
+  );
 }
 
 function sendSuccess(res, status, data) {
@@ -93,8 +97,18 @@ exports.createApplication = (req, res) => {
     salary,
   } = req.body;
 
-  if (!company || !role) {
-    return sendError(res, 400, "Company and role are required");
+  if (
+    !company ||
+    !role ||
+    !status ||
+    !location ||
+    !type ||
+    !appliedDate ||
+    !source ||
+    !notes ||
+    salary == null
+  ) {
+    return sendError(res, 400, "All fields are required");
   }
   const applications = readData();
   const nextId =
@@ -111,7 +125,6 @@ exports.createApplication = (req, res) => {
     appliedDate: appliedDate || new Date().toISOString().split("T")[0],
     location,
     type,
-    appliedDate,
     source,
     notes,
     salary,
