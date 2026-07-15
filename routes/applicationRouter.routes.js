@@ -2,17 +2,16 @@ const express = require("express");
 const router = express.Router();
 const applicationController = require("../controllers/applications.controller");
 
-// get methods
 router.get("/", applicationController.getAllApplication);
-// get application counts by status
+
 router.get("/stats", applicationController.getStats);
-//get single application by id
-router.get("/:id", applicationController.getApplicationById);
 
-// create new
-router.post("/", applicationController.createApplication);
+router.get("/view/:id", applicationController.getApplicationById);
 
-// update
-router.post("/:id", applicationController.updateApplication);
+router.post("/create", applicationController.createApplication);
+
+router.put("/update/:id", applicationController.updateApplication);
+
+router.delete("/delete/:id", applicationController.deleteApplication);
 
 module.exports = router;

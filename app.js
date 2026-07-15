@@ -2,10 +2,12 @@ const express = require("express");
 const applicationRouter = require("./routes/applicationRouter.routes");
 
 const app = express();
+const PORT = 3000;
 
+// Middleware
 app.use(express.json());
 
-// Logger middleware
+// Logger
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`);
   next();
@@ -22,16 +24,15 @@ app.use((req, res) => {
   });
 });
 
-// Error Handler
+// Global Error Handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
-
   res.status(500).json({
     success: false,
     error: "Internal server error",
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });

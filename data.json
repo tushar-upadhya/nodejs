@@ -62,39 +62,15 @@
     },
     {
       "id": 6,
-      "company": "Oracle",
-      "role": "Software Engineer",
-      "status": "rejected",
-      "location": "Bengaluru",
-      "salary": 2600000,
-      "type": "Full Time",
-      "appliedDate": "2026-07-10",
-      "source": "Referral",
-      "notes": "Rejected after technical round."
-    },
-    {
-      "id": 7,
-      "company": "Atlassian",
-      "role": "React Developer",
-      "status": "interview",
-      "location": "Remote",
-      "salary": 3600000,
-      "type": "Remote",
-      "appliedDate": "2026-07-12",
-      "source": "Careers Page",
-      "notes": "Second round scheduled."
-    },
-    {
-      "id": 8,
-      "company": "Google 2",
-      "role": "Software Egineer",
-      "status": "interview",
+      "company": "",
+      "role": "Frontend Engineer",
+      "status": "applied",
       "location": "Delhi",
-      "salary": 3200000,
-      "type": "Full Time",
-      "appliedDate": "2026-07-13",
-      "source": "Reffreal",
-      "notes": "First technical interview scheduled."
+      "salary": 2200000,
+      "type": "Hybrid",
+      "appliedDate": "2026-07-08",
+      "source": "LinkedIn",
+      "notes": "Waiting for HR response."
     }
   ]
 }
