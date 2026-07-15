@@ -133,3 +133,22 @@ exports.createApplication = (req, res) => {
   writeData(applications);
   sendSuccess(res, 200, newApplicationPlayload);
 };
+
+// update
+exports.updateApplication = (req, res) => {
+  const id = Number(req.params.id);
+
+  const applications = readData();
+
+  const application = applications.find((app) => app.id === id);
+
+  if (!application) {
+    return sendError(res, 404, "Application not found");
+  }
+
+  Object.assign(application, req.body);
+
+  writeData(applications);
+
+  return sendSuccess(res, 200, application);
+};

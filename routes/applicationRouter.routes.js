@@ -12,4 +12,7 @@ router.get("/:id", applicationController.getApplicationById);
 // create new
 router.post("/", applicationController.createApplication);
 
+// update
+router.post("/:id", applicationController.updateApplication);
+
 module.exports = router;
